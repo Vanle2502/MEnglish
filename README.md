@@ -14,5 +14,8 @@ wp-content/themes/m-english
 
 The current local URL is `http://localhost/wordpress/`.
 
-Local configuration, database exports, installed plugins, uploads, backups and credentials are intentionally excluded from this repository.
+Live local configuration, uploads, backups, private integrations and credentials are intentionally excluded from this repository.
 
+## Setup a runnable local copy
+
+See [`handoff/SETUP.md`](handoff/SETUP.md). The repository includes the required plugins and a sanitized database containing the site structure and content without real submissions or credentials.

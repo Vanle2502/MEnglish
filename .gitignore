@@ -14,8 +14,14 @@ wp-content/cache/
 wp-content/upgrade/
 *.log
 
-# Installed third-party plugins and local-only MU plugins
-wp-content/plugins/
+# Installed third-party plugins (only required runtime plugins are included)
+wp-content/plugins/*
+!wp-content/plugins/all-in-one-wp-migration/
+!wp-content/plugins/fluentform/
+!wp-content/plugins/polylang/
+!wp-content/plugins/wp-webhooks/
+
+# Local-only MU plugins
 wp-content/mu-plugins/
 
 # Local integration credentials
@@ -28,3 +34,5 @@ Thumbs.db
 .idea/
 .vscode/
 
+# Sanitized handoff database is safe to version.
+!handoff/database.sql
