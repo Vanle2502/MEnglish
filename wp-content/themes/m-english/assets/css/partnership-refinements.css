@@ -1,0 +1,105 @@
+.partnership-hero h1 span {
+    text-decoration: none;
+}
+
+.partnership-hero h1 em {
+    position: relative;
+    display: inline-block;
+    color: #ed6728;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.partnership-hero h1 em::after {
+    position: absolute;
+    right: 1%;
+    bottom: -5px;
+    left: 1%;
+    height: 5px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5.1 C85 3.8 150 5.7 235 4.5 S390 3.7 498 4.7' fill='none' stroke='%23ef7a3f' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+    content: "";
+    pointer-events: none;
+}
+
+.partnership-cta--top {
+    margin-top: 28px;
+}
+
+.partnership-position {
+    position: relative;
+}
+
+.partnership-position__trigger {
+    display: flex;
+    width: 100%;
+    min-height: 51px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 7px #4a35251f;
+    color: #555;
+    text-align: left;
+}
+
+.partnership-position__trigger::after {
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #ef6b27;
+    border-bottom: 2px solid #ef6b27;
+    content: "";
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .2s;
+}
+
+.partnership-position.is-open .partnership-position__trigger::after {
+    transform: translateY(2px) rotate(225deg);
+}
+
+.partnership-position__list {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 4px);
+    right: 0;
+    left: 0;
+    display: none;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 8px 22px #4b2a1830;
+    list-style: none;
+}
+
+.partnership-position.is-open .partnership-position__list {
+    display: grid;
+    gap: 4px;
+}
+
+.partnership-position__option {
+    display: block;
+    width: 100%;
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 3px;
+    background: #ef6b27;
+    color: #fff;
+    text-align: left;
+}
+
+.partnership-position__option:hover,
+.partnership-position__option:focus-visible,
+.partnership-position__option.is-selected {
+    background: #d9511d;
+}
+
+.partnership-position select {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%);
+}

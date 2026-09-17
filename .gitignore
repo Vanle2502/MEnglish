@@ -1,0 +1,30 @@
+# Local WordPress configuration and credentials
+wp-config.php
+.env
+.env.*
+
+# Databases and migration packages
+*.sql
+*.sql.gz
+wp-content/ai1wm-backups/
+
+# Generated/runtime content
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+*.log
+
+# Installed third-party plugins and local-only MU plugins
+wp-content/plugins/
+wp-content/mu-plugins/
+
+# Local integration credentials
+wp-content/themes/m-english/integrations/google-sheets/
+
+# Local analysis tools and editor/system files
+.tools/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+

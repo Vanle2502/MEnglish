@@ -1,0 +1,118 @@
+:root {
+  --font-primary: "Google Sans Flex", "Google Sans", sans-serif;
+  --color-primary: #ec7028;
+  --color-primary-dark: #d9511d;
+  --color-text: #454545;
+  --color-bg: #fff;
+  --color-cream: #fffdf1;
+  --container-width: 1320px;
+  --section-space: 66px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-size: 16px;
+  line-height: 1.45;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.14;
+}
+.container {
+  width: min(calc(100% - 64px), var(--container-width));
+  margin-inline: auto;
+}
+.section {
+  padding-block: var(--section-space);
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+.section-heading__eyebrow {
+  font-size: clamp(18px, 2vw, 26px);
+  margin-bottom: 2px;
+}
+.section-heading__eyebrow strong {
+  color: var(--color-primary);
+}
+.section-heading h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  margin: 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 24px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 14px;
+}
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn:hover,
+.site-header__cta:hover,
+.site-footer__button:hover {
+  background: var(--color-primary-dark);
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 1000;
+  background: #fff;
+  padding: 8px;
+}
+.skip-link:focus {
+  left: 8px;
+}
+:focus-visible {
+  outline: 3px solid #154fa1;
+  outline-offset: 3px;
+}
+@media (max-width: 767px) {
+  :root {
+    --section-space: 48px;
+  }
+  .container {
+    width: min(calc(100% - 36px), var(--container-width));
+  }
+  .section-heading {
+    margin-bottom: 26px;
+  }
+}

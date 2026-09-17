@@ -1,0 +1,55 @@
+<?php
+/** Program content shared by the ecosystem sections. */
+$programs = [
+    [
+        'id' => 'm-english', 'name' => 'M-English', 'logo' => 'logo-m-english.png', 'photo' => 'children-m-english.png',
+        'eyebrow' => 'Chương trình chính khóa', 'headline' => 'Tiếng Anh mầm non qua Truyện kể, Âm nhạc & Kịch nghệ',
+        'age' => 'Trẻ mầm non từ 1 đến 6 tuổi',
+        'intro' => 'Chương trình Anh ngữ ứng dụng phương pháp cảm xúc và kịch nghệ sân khấu hóa. Trẻ được đắm mình vào thế giới truyện kể đặc quyền, âm nhạc lồng ghép cốt truyện và các hoạt động vận động đa giác quan.',
+        'detail' => 'Ngôn ngữ được thẩm thấu tự nhiên theo chu trình 3 vòng: Nghe → Tiếp nhận → Hát & Diễn.',
+        'benefits' => ['Học liệu đầy đủ: sách truyện, flashcard, giáo cụ và học liệu số theo từng bài.', 'Giáo cụ trực quan, handmade giúp trẻ hứng thú và ghi nhớ ngôn ngữ tự nhiên.', 'Tích hợp âm nhạc, kịch nghệ và vận động đa giác quan.', 'Kết nối gia đình để hành trình học tiếng Anh tiếp tục ở nhà.'],
+        'icons' => ['icon-books.png', 'icon-brush.png', 'icon-music.png', 'icon-family.png'],
+        'banner' => 'banner-m-english.png', 'cta' => ['ĐẶT LỊCH TƯ VẤN HỆ SINH THÁI', 'NHẬN CATALOGUE TRỌN BỘ'],
+    ],
+    [
+        'id' => 'm-phonics', 'name' => 'M-Phonics', 'logo' => 'logo-m-phonics.png', 'photo' => 'children-m-phonics.png',
+        'eyebrow' => 'Chương trình ngữ âm chuẩn khoa học', 'headline' => 'Đánh vần tiếng Anh theo Science of Reading',
+        'age' => 'Trẻ từ 3 đến 8 tuổi',
+        'intro' => 'Giải pháp ngữ âm dựa trên nền tảng khoa học đọc Science of Reading, giúp trẻ nghe âm, nhận diện chữ và tự tin đọc tiếng Anh.',
+        'detail' => 'Khác với phương pháp học thuộc lòng truyền thống, M-Phonics giúp trẻ nhận diện âm, ghép vần qua nhịp điệu, hình ảnh và trò chơi.',
+        'benefits' => ['Học liệu đồng bộ: giáo trình, truyện, bài tập và video để trẻ luyện tập xuyên suốt.', 'Nền tảng số hỗ trợ luyện tập tại nhà, theo dõi tiến bộ và xây dựng thói quen đọc.', 'Đào tạo giáo viên, trang bị phương pháp giảng dạy ngữ âm theo Science of Reading.', 'Vận hành thuận tiện với hướng dẫn triển khai và công cụ đánh giá theo từng giai đoạn.'],
+        'icons' => ['icon-books.png', 'icon-brush.png', 'icon-music.png', 'icon-family.png'],
+        'banner' => 'banner-m-phonics.png', 'cta' => ['XEM CHI TIẾT M-PHONICS', 'TƯ VẤN CHƯƠNG TRÌNH M-PHONICS'],
+    ],
+    [
+        'id' => 'm-cook', 'name' => 'M-Cook', 'logo' => 'logo-m-cook.png', 'photo' => 'child-m-cook.png',
+        'eyebrow' => 'Tiếng Anh trải nghiệm', 'headline' => 'Chương trình học tiếng Anh thông qua kỹ năng sống',
+        'age' => 'Trẻ mầm non 5 tuổi học',
+        'intro' => 'Mô hình tích hợp giờ học nấu ăn bằng tiếng Anh. Trẻ được khám phá thế giới nguyên liệu, công cụ và thao tác chế biến thực tế.',
+        'detail' => 'Hoạt động thực hành giúp trẻ dùng tiếng Anh tự nhiên, phát triển vận động tinh, kỹ năng phối hợp và sự tự tin trong đời sống.',
+        'benefits' => ['Lộ trình bài bản: trẻ tìm hiểu, làm món và luyện từ vựng trong từng buổi học.', 'Giáo viên được đào tạo để tổ chức lớp học an toàn, hấp dẫn.', 'Đồng hành dài lâu: tài liệu và học liệu đầy đủ cho mỗi chủ đề.'],
+        'icons' => ['icon-books.png', 'icon-brush.png', 'icon-music.png'],
+        'banner' => 'banner-m-cook.png', 'cta' => ['XEM CHI TIẾT M-COOK', 'NHẬN KỊCH BẢN M-COOK MẪU'],
+    ],
+    [
+        'id' => 'm-learning', 'name' => 'M-Learning', 'logo' => 'logo-m-learning.png', 'photo' => 'teachers-m-learning.png',
+        'eyebrow' => 'Nền tảng số & đào tạo', 'headline' => 'Hệ thống đào tạo & E-Learning phát triển con người và đội ngũ',
+        'age' => 'Chủ trường, Quản lý chuyên môn và Giáo viên đối tác',
+        'intro' => 'M-Learning là hệ thống đào tạo và huấn luyện dành cho doanh nghiệp, trường học và tổ chức giáo dục, tập trung phát triển con người.',
+        'detail' => 'Nội dung đổi mới và nâng cao năng lực chuyên môn giúp giáo viên tự tin đứng lớp, kết hợp linh hoạt học trực tuyến và học trực tiếp.',
+        'benefits' => ['Phát triển con người đồng bộ: tâm lý, giao tiếp, phát triển bản thân và gắn kết đội ngũ.', 'Phát triển năng lực giáo dục: đào tạo giáo viên, tiếng Anh mầm non và quản lý giáo dục.', 'Đào tạo theo nhu cầu thực tế với chương trình riêng cho từng tổ chức.'],
+        'icons' => ['icon-books.png', 'icon-brush.png', 'icon-music.png'],
+        'banner' => 'banner-m-learning.png', 'cta' => ['XEM CHI TIẾT M-LEARNING', 'ĐĂNG KÝ TÀI KHOẢN DEMO'],
+    ],
+    [
+        'id' => 'm-intesol', 'name' => 'M-INTESOL', 'logo' => null, 'photo' => 'teachers-m-intesol.png',
+        'eyebrow' => 'Chứng chỉ Quốc tế UK', 'headline' => 'Chuẩn hóa năng lực giáo viên tiếng Anh trẻ em',
+        'age' => 'Giáo viên tiếng Anh mầm non, tiểu học & chuyên gia đào tạo',
+        'intro' => 'Chương trình đào tạo và cấp chứng chỉ quốc tế hợp tác cùng INTESOL Worldwide (UK), giúp giáo viên nâng cao năng lực chuyên môn.',
+        'detail' => 'Lộ trình chú trọng phương pháp giảng dạy, thực hành đứng lớp và khả năng tạo nên những giờ học tiếng Anh giàu cảm xúc.',
+        'benefits' => ['Chương trình đào tạo kết hợp Online & Offline.', 'Giảng dạy trực tiếp bởi các TESOL Master Trainer quốc tế.', 'Bằng chứng chỉ có giá trị công nhận toàn cầu.'],
+        'icons' => ['icon-books.png', 'icon-brush.png', 'icon-music.png'],
+        'banner' => 'banner-ecosystem.png', 'cta' => ['XEM CHI TIẾT M-INTESOL', 'ĐĂNG KÝ KHÓA ĐÀO TẠO M-INTESOL'],
+    ],
+];
+return $programs;

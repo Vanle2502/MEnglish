@@ -1,0 +1,387 @@
+.ecosystem-page {
+  overflow: hidden;
+  color: #333;
+}
+.ecosystem-page .container {
+  width: min(calc(100% - 64px), var(--container-width));
+  margin-inline: auto;
+}
+.ecosystem-intro {
+  position: relative;
+  text-align: center;
+  padding: 58px 0 0;
+  background: linear-gradient(180deg, #fff 0%, #fff 67%, #fff0e4 100%);
+}
+.ecosystem-kicker {
+  font-size: clamp(16px, 1.5vw, 22px);
+  margin: 0 0 12px;
+  letter-spacing: 0.05em;
+}
+.ecosystem-intro h1 {
+  font-size: clamp(32px, 3.6vw, 54px);
+  line-height: 1.12;
+  margin: 0 auto 18px;
+  font-weight: 850;
+}
+.ecosystem-intro h1 span {
+  color: #ed6d25;
+}
+.ecosystem-intro > .container > p:last-of-type {
+  max-width: 1040px;
+  margin: 0 auto 42px;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: 1.35;
+}
+.ecosystem-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  padding: 26px 0 30px;
+  background: #fff;
+}
+.ecosystem-nav a {
+  padding: 0 18px;
+  border-right: 1px solid #f4d8c8;
+  text-align: center;
+  min-width: 0;
+}
+.ecosystem-nav a:last-child {
+  border: 0;
+}
+.ecosystem-nav strong {
+  display: block;
+  color: #ed6d25;
+  font-size: clamp(18px, 1.5vw, 24px);
+  margin-bottom: 12px;
+}
+.ecosystem-nav small {
+  display: block;
+  color: #333;
+  font-size: clamp(12px, 0.9vw, 15px);
+  font-weight: 650;
+  line-height: 1.3;
+}
+.ecosystem-program {
+  position: relative;
+  isolation: isolate;
+  padding-top: 70px;
+  background:
+    radial-gradient(ellipse 28% 16% at 1% 23%, #fff0df 0%, transparent 100%),
+    radial-gradient(ellipse 24% 18% at 99% 78%, #fff3e6 0%, transparent 100%),
+    #fff;
+}
+.ecosystem-program--m-phonics {
+  background:
+    radial-gradient(ellipse 28% 18% at 96% 16%, #ffe9d8 0%, transparent 100%),
+    #fff;
+}
+.ecosystem-program--m-cook {
+  background:
+    radial-gradient(ellipse 31% 19% at 3% 34%, #fff0dd 0%, transparent 100%),
+    #fff;
+}
+.ecosystem-program--m-learning {
+  background:
+    radial-gradient(ellipse 31% 19% at 99% 44%, #ffefe3 0%, transparent 100%),
+    #fff;
+}
+.ecosystem-program--m-intesol {
+  background:
+    radial-gradient(ellipse 31% 19% at 3% 48%, #fff2e5 0%, transparent 100%),
+    #fff;
+}
+.ecosystem-program__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 970px;
+  margin: 0 auto 30px;
+}
+.ecosystem-program__brand {
+  width: 320px;
+  flex: none;
+  color: #eb6c25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: clamp(27px, 3vw, 49px);
+  font-weight: 850;
+  line-height: 1;
+}
+.ecosystem-program__brand img {
+  width: 100%;
+  height: 125px;
+  object-fit: contain;
+}
+.ecosystem-program__brand-icon {
+  font-size: 1.35em;
+  line-height: 0.7;
+}
+.ecosystem-program__heading > div:last-child {
+  flex: 1;
+}
+.ecosystem-program__heading p {
+  color: #e96622;
+  font-size: clamp(18px, 1.5vw, 24px);
+  margin: 0 0 8px;
+}
+.ecosystem-program__heading h2 {
+  font-size: clamp(27px, 2.4vw, 38px);
+  line-height: 1.12;
+  margin: 0;
+  font-weight: 800;
+}
+.ecosystem-feature {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  min-height: 380px;
+  align-items: stretch;
+  border: 1px solid #e2e2e2;
+  border-radius: 17px;
+  padding: 16px;
+  box-shadow: 0 5px 14px #331b0b13;
+  background: #fff;
+  margin-bottom: 36px;
+}
+.ecosystem-feature__photo {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fff, #ffe5d5);
+  border-radius: 8px;
+}
+.ecosystem-feature__photo img {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.ecosystem-feature__copy {
+  align-self: stretch;
+  border-radius: 16px;
+  background: #ef7028;
+  color: #fff;
+  padding: 0 42px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ecosystem-feature__copy h3 {
+  align-self: flex-start;
+  background: #fff;
+  color: #e96a23;
+  border-radius: 0 0 22px 0;
+  font-size: clamp(22px, 2vw, 32px);
+  line-height: 1.14;
+  margin: 0 0 20px -42px;
+  padding: 16px 32px 14px 42px;
+}
+.ecosystem-feature__copy p {
+  font-size: clamp(16px, 1.2vw, 20px);
+  font-weight: 650;
+  line-height: 1.35;
+  margin: 0 0 16px;
+}
+.ecosystem-feature__copy p:last-child {
+  margin: 0;
+}
+.ecosystem-benefits {
+  position: relative;
+  padding: 34px 0 42px;
+  background: linear-gradient(100deg, #fffdf0, #fff8e9 48%, #fffef3);
+}
+.ecosystem-benefits::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 20px;
+  background: radial-gradient(
+      ellipse 70px 17px at 50% 100%,
+      #fffdf0 98%,
+      transparent 100%
+    )
+    repeat-x;
+  background-size: 140px 20px;
+}
+.ecosystem-benefits__grid {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.ecosystem-benefit {
+  flex: 1;
+  max-width: 325px;
+  min-height: 225px;
+  padding: 23px 20px 20px;
+  border-radius: 18px;
+  background: linear-gradient(150deg, #ffc999, #ffd3aa);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 12px #dc8e5814;
+}
+.ecosystem-benefit img {
+  width: 56px;
+  height: 58px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.ecosystem-benefit p {
+  font-size: clamp(15px, 1.04vw, 18px);
+  line-height: 1.28;
+  font-weight: 650;
+  margin: 0;
+}
+.ecosystem-program__cta {
+  position: relative;
+  min-height: 122px;
+  background: #dc6d2c;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.ecosystem-program__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, #e76d2bd9, #e97838ac), var(--banner);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.96;
+}
+.ecosystem-program__cta .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.ecosystem-program__cta a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #fff;
+  font-size: clamp(15px, 1.25vw, 20px);
+  font-weight: 850;
+  text-shadow: 0 1px 3px #7e351c80;
+}
+.ecosystem-program__cta a img {
+  width: 80px;
+  height: 92px;
+  object-fit: contain;
+}
+.ecosystem-program__cta a span {
+  font-size: 30px;
+}
+.ecosystem-program__cta a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .ecosystem-program__brand {
+    width: 230px;
+  }
+  .ecosystem-feature {
+    grid-template-columns: 40% 60%;
+  }
+  .ecosystem-feature__copy {
+    padding-inline: 24px;
+  }
+  .ecosystem-feature__copy h3 {
+    margin-left: -24px;
+    padding-left: 24px;
+  }
+  .ecosystem-benefit {
+    min-height: 225px;
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .ecosystem-page .container {
+    width: min(calc(100% - 32px), var(--container-width));
+  }
+  .ecosystem-intro {
+    padding-top: 42px;
+  }
+  .ecosystem-nav {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-block: 18px;
+  }
+  .ecosystem-nav a {
+    min-width: 150px;
+    scroll-snap-align: start;
+  }
+  .ecosystem-program {
+    padding-top: 52px;
+  }
+  .ecosystem-program__heading {
+    display: block;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .ecosystem-program__brand {
+    width: 230px;
+    margin: 0 auto 8px;
+  }
+  .ecosystem-program__brand img {
+    height: 100px;
+  }
+  .ecosystem-feature {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .ecosystem-feature__photo {
+    min-height: 260px;
+  }
+  .ecosystem-feature__copy {
+    padding: 0 23px 25px;
+  }
+  .ecosystem-feature__copy h3 {
+    margin-left: -23px;
+    padding-left: 23px;
+  }
+  .ecosystem-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ecosystem-benefit {
+    max-width: none;
+    min-height: 190px;
+  }
+  .ecosystem-program__cta .container {
+    gap: 10px;
+  }
+  .ecosystem-program__cta a {
+    font-size: 12px;
+    gap: 4px;
+  }
+  .ecosystem-program__cta a img {
+    width: 38px;
+    height: 52px;
+  }
+  .ecosystem-program__cta a span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .ecosystem-benefits__grid {
+    gap: 10px;
+  }
+  .ecosystem-benefit {
+    padding: 18px 10px;
+  }
+  .ecosystem-benefit p {
+    font-size: 13px;
+  }
+  .ecosystem-program__cta a img {
+    display: none;
+  }
+}

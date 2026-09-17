@@ -1,0 +1,254 @@
+/* ================================================================
+   M-English motion system
+   Shared and one-off animations stay in this file until it becomes
+   large enough to justify splitting by feature.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   Reusable scroll-motion presets
+
+   Usage:
+   data-motion="fade-up|fade-down|fade-left|fade-right|scale-in|
+                reveal-center|wipe-right"
+   Optional timing:
+   style="--motion-delay: 200ms; --motion-duration: 700ms;"
+   ---------------------------------------------------------------- */
+.motion-observer-ready [data-motion] {
+  --motion-delay: 0ms;
+  --motion-duration: 700ms;
+  --motion-distance: 24px;
+  opacity: 0;
+  transition:
+    opacity var(--motion-duration) ease var(--motion-delay),
+    transform var(--motion-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay),
+    clip-path var(--motion-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay),
+    background-color var(--motion-duration) ease var(--motion-delay);
+  will-change: opacity, transform, clip-path;
+}
+
+.motion-observer-ready [data-motion="fade-up"] {
+  transform: translate3d(0, var(--motion-distance), 0);
+}
+
+.motion-observer-ready [data-motion="fade-down"] {
+  transform: translate3d(0, calc(var(--motion-distance) * -1), 0);
+}
+
+.motion-observer-ready [data-motion="fade-left"] {
+  transform: translate3d(var(--motion-distance), 0, 0);
+}
+
+.motion-observer-ready [data-motion="fade-right"] {
+  transform: translate3d(calc(var(--motion-distance) * -1), 0, 0);
+}
+
+.motion-observer-ready [data-motion="scale-in"] {
+  transform: scale(0.94);
+}
+
+.motion-observer-ready [data-motion="card-grow"] {
+  background-color: #ffd4ba;
+  transform: scale(0.92);
+}
+
+.motion-observer-ready [data-motion="reveal-center"] {
+  opacity: 1;
+  clip-path: inset(50% 0 50% 0);
+}
+
+.motion-observer-ready [data-motion="wipe-right"] {
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+}
+
+.motion-observer-ready [data-motion].is-motion-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+.motion-observer-ready [data-motion="card-grow"].is-motion-visible {
+  background-color: #f39a62;
+}
+
+.motion-observer-ready [data-motion].is-motion-complete {
+  transition: none;
+  will-change: auto;
+}
+
+/* ----------------------------------------------------------------
+   Canva-style Pan: medium speed, direction right, enter + exit.
+   Each scope can contain independently staggered data-pan-part nodes.
+   ---------------------------------------------------------------- */
+.pan-motion-ready [data-pan-part] {
+  --pan-delay: 0ms;
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+  transition:
+    opacity 620ms ease var(--pan-delay),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--pan-delay);
+  will-change: opacity, transform;
+}
+
+.pan-motion-ready [data-pan-scope].is-pan-visible [data-pan-part] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.pan-motion-ready [data-pan-scope].is-pan-exiting [data-pan-part] {
+  opacity: 0;
+  transform: translate3d(28px, 0, 0);
+}
+
+.pan-motion-ready [data-pan-scope].is-pan-resetting [data-pan-part] {
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+  transition: none;
+}
+
+/* Home: header + hero opening sequence (reference: M-English.mp4). */
+body.home .site-header {
+  transform-origin: left top;
+  animation: m-home-header-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  will-change: clip-path, opacity;
+}
+
+body.home .home-hero__slide:first-child > img {
+  animation: m-home-hero-image-in 5s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  will-change: opacity, filter, transform;
+}
+
+body.home .home-hero__slide:first-child::after {
+  animation: m-home-hero-shade-in 1.2s ease 0.12s both;
+}
+
+body.home .home-hero__slide:first-child .home-hero__overlay h1 {
+  animation: m-home-hero-title-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  will-change: clip-path, opacity, transform;
+}
+
+body.home .home-hero__slide:first-child .home-hero__overlay p {
+  animation: m-home-hero-copy-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  will-change: clip-path, opacity, transform;
+}
+
+body.home .home-hero__arrow {
+  animation: m-home-hero-arrow-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s both;
+  will-change: opacity, transform;
+}
+
+body.home .home-hero__arrow--next {
+  animation-delay: 0.12s;
+}
+
+body.home.is-home-intro-complete .site-header,
+body.home.is-home-intro-complete .home-hero__slide:first-child > img,
+body.home.is-home-intro-complete .home-hero__slide:first-child::after,
+body.home.is-home-intro-complete .home-hero__slide:first-child .home-hero__overlay h1,
+body.home.is-home-intro-complete .home-hero__slide:first-child .home-hero__overlay p,
+body.home.is-home-intro-complete .home-hero__arrow {
+  will-change: auto;
+}
+
+@keyframes m-home-header-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0 round 0 0 50px 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 0 0 50px 0);
+  }
+}
+
+@keyframes m-home-hero-image-in {
+  from {
+    opacity: 0.35;
+    filter: brightness(1.45) saturate(0.82);
+    transform: translate3d(0, 10px, 0) scale(1.01);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    transform: translate3d(0, -12px, 0) scale(1.055);
+  }
+}
+
+@keyframes m-home-hero-shade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes m-home-hero-title-in {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes m-home-hero-copy-in {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes m-home-hero-arrow-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-observer-ready [data-motion] {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .pan-motion-ready [data-pan-part],
+  .pan-motion-ready [data-pan-scope].is-pan-visible [data-pan-part],
+  .pan-motion-ready [data-pan-scope].is-pan-exiting [data-pan-part],
+  .pan-motion-ready [data-pan-scope].is-pan-resetting [data-pan-part] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  body.home .site-header,
+  body.home .home-hero__slide:first-child > img,
+  body.home .home-hero__slide:first-child::after,
+  body.home .home-hero__slide:first-child .home-hero__overlay h1,
+  body.home .home-hero__slide:first-child .home-hero__overlay p,
+  body.home .home-hero__arrow {
+    animation: none;
+    clip-path: none;
+    filter: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  body.home .home-hero__arrow {
+    transform: translateY(-50%);
+  }
+}

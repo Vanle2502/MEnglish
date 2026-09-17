@@ -1,0 +1,265 @@
+/* Shared type hierarchy. Keep headings clear without making the whole site feel heavy. */
+body {
+  font-weight: 400;
+}
+
+#main-content h1 {
+  font-weight: 700;
+}
+#main-content h2 {
+  font-weight: 650;
+}
+#main-content h3 {
+  font-weight: 600;
+}
+#main-content h4,
+#main-content h5,
+#main-content h6 {
+  font-weight: 600;
+}
+
+#main-content p,
+#main-content li,
+#main-content blockquote,
+#main-content small {
+  font-weight: 400;
+}
+
+#main-content strong,
+#main-content b {
+  font-weight: 650;
+}
+
+#main-content a,
+#main-content button,
+#main-content [type="submit"],
+#main-content .btn {
+  font-weight: 600;
+}
+
+.section-heading__eyebrow,
+.ecosystem-kicker,
+.partnership-kicker,
+.contact-kicker {
+  font-weight: 450;
+}
+
+.site-header__nav a,
+.site-header__dropdown > button {
+  font-weight: 600;
+}
+.site-header__submenu-list strong {
+  font-weight: 650;
+}
+.site-header__language {
+  font-weight: 650 !important;
+}
+.site-header__cta {
+  font-weight: 600 !important;
+}
+
+.site-footer__inner h2 {
+  font-weight: 650;
+}
+.site-footer__inner a,
+.site-footer__brand .site-footer__button {
+  font-weight: 500;
+}
+
+/* Fluent Forms uses high-specificity and !important declarations. */
+#main-content .ff-el-input--label label,
+#main-content .m-english-field-label,
+#main-content .ff-el-form-check-label,
+#main-content .ff-btn-submit {
+  font-weight: 650 !important;
+}
+#main-content .ff-message-success,
+#main-content .error,
+#main-content .text-danger {
+  font-weight: 500 !important;
+}
+
+/* Small UI labels need slightly more emphasis than body copy. */
+#main-content [class*="option"],
+#main-content [class*="trigger"],
+#main-content [class*="number"] {
+  font-weight: 550;
+}
+
+/* Consistent, restrained interaction for CTA links across the site. */
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a,
+.partnership-button,
+.site-header__cta,
+.site-footer__button {
+  position: relative;
+  transition:
+    transform 0.22s ease,
+    color 0.22s ease,
+    text-shadow 0.22s ease,
+    filter 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a::after,
+.partnership-button::after {
+  position: absolute;
+  right: 8%;
+  bottom: -5px;
+  left: 8%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  opacity: 0.9;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a:hover,
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a:focus-visible,
+.partnership-button:hover,
+.partnership-button:focus-visible {
+  color: #fff9cf;
+  text-shadow: 0 3px 9px rgba(91, 35, 10, 0.38);
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a:hover::after,
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a:focus-visible::after,
+.partnership-button:hover::after,
+.partnership-button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a
+  img {
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a:hover
+  img,
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a:focus-visible
+  img {
+  filter: drop-shadow(0 5px 5px rgba(83, 34, 12, 0.25));
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a
+  span,
+.partnership-button span {
+  display: inline-block;
+  transition: transform 0.22s ease;
+}
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a:hover
+  span,
+:is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+  a:focus-visible
+  span,
+.partnership-button:hover span,
+.partnership-button:focus-visible span {
+  transform: translateX(4px);
+}
+
+.site-header__cta:hover,
+.site-header__cta:focus-visible,
+.site-footer__button:hover,
+.site-footer__button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(102, 39, 12, 0.24);
+}
+
+:is(
+    .home-cta-strip,
+    .about-cta,
+    .ecosystem-program__cta,
+    .partnership-cta,
+    .contact-quick
+  )
+  a:active,
+.partnership-button:active,
+.site-header__cta:active,
+.site-footer__button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+      .home-cta-strip,
+      .about-cta,
+      .ecosystem-program__cta,
+      .partnership-cta,
+      .contact-quick
+    )
+    a,
+  :is(
+      .home-cta-strip,
+      .about-cta,
+      .ecosystem-program__cta,
+      .partnership-cta,
+      .contact-quick
+    )
+    a::after,
+  :is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+    a
+    img,
+  :is(.about-cta, .ecosystem-program__cta, .partnership-cta, .contact-quick)
+    a
+    span,
+  .partnership-button,
+  .partnership-button::after,
+  .partnership-button span,
+  .site-header__cta,
+  .site-footer__button {
+    transition: none;
+  }
+}

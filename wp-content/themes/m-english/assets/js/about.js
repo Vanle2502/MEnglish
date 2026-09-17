@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded',()=>{
+  const carousel=document.querySelector('.about-hero__slider');
+  if(!carousel)return;
+  const slides=[...carousel.querySelectorAll('.about-hero__slide')];
+  const dots=[...carousel.querySelectorAll('.about-hero__dots button')];
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let active=0;
+  let timer;
+  let touchStartX=null;
+  const show=(next)=>{
+    if(next===active)return;
+    slides[active].classList.remove('is-active');
+    slides[active].setAttribute('aria-hidden','true');
+    dots[active].classList.remove('is-active');
+    dots[active].removeAttribute('aria-current');
+    active=(next+slides.length)%slides.length;
+    slides[active].classList.add('is-active');
+    slides[active].setAttribute('aria-hidden','false');
+    dots[active].classList.add('is-active');
+    dots[active].setAttribute('aria-current','true');
+  };
+  const stop=()=>{window.clearInterval(timer);timer=undefined};
+  const start=()=>{if(reduceMotion.matches||document.hidden||timer)return;timer=window.setInterval(()=>show(active+1),5500)};
+  carousel.querySelector('.about-hero__arrow--prev')?.addEventListener('click',()=>{show(active-1);stop();start()});
+  carousel.querySelector('.about-hero__arrow--next')?.addEventListener('click',()=>{show(active+1);stop();start()});
+  dots.forEach((dot,index)=>dot.addEventListener('click',()=>{show(index);stop();start()}));
+  carousel.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();show(active+(event.key==='ArrowRight'?1:-1));stop();start()}});
+  carousel.addEventListener('touchstart',event=>{touchStartX=event.touches[0]?.clientX??null},{passive:true});
+  carousel.addEventListener('touchend',event=>{if(touchStartX===null)return;const distance=(event.changedTouches[0]?.clientX??touchStartX)-touchStartX;touchStartX=null;if(Math.abs(distance)>45){show(active+(distance<0?1:-1));stop();start()}},{passive:true});
+  carousel.addEventListener('mouseenter',stop);
+  carousel.addEventListener('mouseleave',start);
+  carousel.addEventListener('focusin',stop);
+  carousel.addEventListener('focusout',event=>{if(!carousel.contains(event.relatedTarget))start()});
+  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+  reduceMotion.addEventListener?.('change',()=>reduceMotion.matches?stop():start());
+  start();
+});
