@@ -557,7 +557,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'admin','6bc01189656ad204006334b32beec93b','admin','developer@example.com','','2026-09-14 02:07:02','',0,'Local Admin');
+INSERT INTO `wp_users` VALUES (1,'admin','DISABLED-446c9dfb-b293-11f1-a723-744ca1c636ee','admin','developer@example.com','','2026-09-14 02:07:02','',0,'Local Admin');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 DROP TABLE IF EXISTS `wp_wpwhpro_authentication`;
